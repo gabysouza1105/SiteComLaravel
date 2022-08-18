@@ -1,0 +1,28 @@
+//Pastas
+views
+    events
+        create.blade.php
+
+//Route
+Route::get('/create', [EventController::class, 'create']);
+
+//Controller function
+class EventController extends Controller{
+    public function create()
+    {
+        //arquivo create na pasta events
+        return view('events.create');
+    }
+}
+
+//Migrations
+php artisan migrate
+php artisan make:migration -> Create a new migration file
+php artisan migrate:install -> Create the migration repository
+php artisan migrate:status -> Show the status of each migration
+php artisan migrate:rollback -> Rollback the last database migrations
+php artisan migrate:reset -> Rollback all database migrations
+php artisan migrate:refresh -> Reset and re-run all migrations
+php artisan migrate:fresh -> Drop all tables and re-run all migrations
+
+Cada tabela tem um Model responsável pela interação entre as requisições com o banco.
